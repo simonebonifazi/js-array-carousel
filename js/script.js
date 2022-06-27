@@ -24,7 +24,10 @@ Consigli del giorno:
 2. scelgo approccio, creo variabile flag
 3.connetto una variabile nuova al DOM su cui andrò a stampare
 4. ciclo con for per ricostruire lista
-5. al click scala la foto visibile
+5. recupero lista
+6. connetto tasti next e prev al DOM
+7. lavoro sul click
+
 */
 //creo array con immagini dentro
 
@@ -60,12 +63,28 @@ const prevPhoto = document.getElementById('prev');
 
 nextPhoto.addEventListener('click', function () {
     //rimuovo la classe
-    listItems[currentActiveIndex].classList.remove('active')
-    //incremento la variabile della lista per selezionare gli elementi successivi
+    listItems[currentActiveIndex].classList.remove('active');
+    //incremento la variabile della lista per selezionare gli elementi successivi MA
+    //deve tornare a 4 quando raggiunge 0
     currentActiveIndex++;
+    if (currentActiveIndex >= 5) {
+        currentActiveIndex = 0
+    }
     //aggiungo la classe active
-    listItems[currentActiveIndex].classList.add('active')
+    listItems[currentActiveIndex].classList.add('active');
+})
 
-    console.log()
+//lavoro sul prev
+prevPhoto.addEventListener('click', function () {
+    //rimuovo la classe active dal primo elemento del nodo
+    listItems[currentActiveIndex].classList.remove('active');
+    //decremento la variabile della lista per selezionare gli elementi successivi MA
+    //deve tornare a 0 quando raggiunge 5
+    currentActiveIndex--;
+    if (currentActiveIndex < 0) {
+        currentActiveIndex = 4
+    }
+    //aggiungo la classe active
+    listItems[currentActiveIndex].classList.add('active');
 })
 

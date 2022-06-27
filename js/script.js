@@ -19,7 +19,27 @@ Consigli del giorno:
 2. Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa vogliamo fare
 3. Al momento giusto (starà a voi capire quale) rispondete a questa domanda: "Quanti cicli servono?"
 */
-
+/* steps
+1.creo array
+2. scelgo approccio, in seguito per esercizio provo anche l'altro
+3. creo variabile flag
+4. conceteno con il ciclo for gli elementi
+*/
 //creo array con immagini dentro
 
-const contentCarousel = ['img/01.jpg', 'img/04.jpg', 'img/08.jpg', 'img/09.jpg', 'img/10.jpg']
+const contentCarousel = ['img/01.jpg', 'img/04.jpg', 'img/08.jpg', 'img/09.jpg', 'img/10.jpg'];
+console.log(contentCarousel)
+//variabile contenitore 
+const carousel = document.getElementById('carousel-list');
+//variabile flag dove stamperò la mia lista in seguito
+let carouselElement;
+//ciclo per caricare le immagini come prima della rimozione
+//console.log(carouselElement)
+for (let i = 0; i < 5; i++) {
+    carouselElement = contentCarousel[`${i}`];
+    console.log(carouselElement)
+}
+
+carousel.innerHTML = `<li class="carousel-element active"> <img class=" img-fluid" src="${carouselElement}" alt="carousel-landscape"></li>`
+console.log(carousel)
+

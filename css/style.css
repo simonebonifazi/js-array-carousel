@@ -4,6 +4,10 @@ ul {
     position: relative;
 }
 
+ul li {
+    list-style-type: none;
+}
+
 .fa-solid {
     font-size: 2.5rem;
     position: absolute;

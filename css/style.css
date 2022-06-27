@@ -28,4 +28,13 @@ ul {
     height: 500px;
 
     border-radius: 1rem;
+
+}
+
+.carousel-element {
+    display: none;
+}
+
+.active {
+    display: block;
 }

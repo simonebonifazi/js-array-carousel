@@ -1,0 +1,31 @@
+ul {
+    padding: 0;
+
+    position: relative;
+}
+
+.fa-solid {
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+}
+
+.fa-circle-arrow-left {
+    left: 50px;
+}
+
+.fa-circle-arrow-right {
+    right: 50px;
+}
+
+#carousel-list {
+    height: 100%;
+}
+
+.carousel-element img {
+    width: 750px;
+    height: 500px;
+
+    border-radius: 1rem;
+}

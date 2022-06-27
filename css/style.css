@@ -13,7 +13,10 @@ ul li {
     position: absolute;
     top: 50%;
     transform: translateY(-100%);
+
+    cursor: pointer;
 }
+
 
 .fa-circle-arrow-left {
     left: 50px;

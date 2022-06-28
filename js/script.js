@@ -38,22 +38,22 @@ const carousel = document.getElementById('carousel-list');
 //variabile flag dove stamperò la mia lista in seguito
 let carouselElement;
 //ciclo per caricare le immagini come prima della rimozione
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < contentCarousel.length; i++) {
     carouselElement = contentCarousel[`${i}`];
     carousel.innerHTML +=
         `<li class="carousel-element">
-     <img class="img-fluid" src="${carouselElement}" alt="carousel-landscape" >
+     <img class="img-fluid" src="${carouselElement}" alt="carousel-landscape-${i}" >
      </li>`;
 }
 
 // creo variabile per monitorare li a cui darò/leverò classe active
 let currentActiveIndex = 0;
 // recupero li dal DOM
-const listItems = document.querySelectorAll('#carousel-list li');
-console.log(listItems)
+const listItemsImages = document.querySelectorAll('#carousel-list li');
+console.log(listItemsImages)
 
 //attivo classe active alla prima immagine
-listItems[currentActiveIndex].classList.add('active')
+listItemsImages[currentActiveIndex].classList.add('active')
 
 
 //  connetto variabili al DOM e aggiungo event listener al click delle freccie
@@ -63,28 +63,28 @@ const prevPhoto = document.getElementById('prev');
 
 nextPhoto.addEventListener('click', function () {
     //rimuovo la classe
-    listItems[currentActiveIndex].classList.remove('active');
+    listItemsImages[currentActiveIndex].classList.remove('active');
     //incremento la variabile della lista per selezionare gli elementi successivi MA
     //deve tornare a 4 quando raggiunge 0
     currentActiveIndex++;
-    if (currentActiveIndex >= 5) {
+    if (currentActiveIndex >= listItemsImages.length) {
         currentActiveIndex = 0
     }
     //aggiungo la classe active
-    listItems[currentActiveIndex].classList.add('active');
+    listItemsImages[currentActiveIndex].classList.add('active');
 })
 
 //lavoro sul prev
 prevPhoto.addEventListener('click', function () {
     //rimuovo la classe active dal primo elemento del nodo
-    listItems[currentActiveIndex].classList.remove('active');
+    listItemsImages[currentActiveIndex].classList.remove('active');
     //decremento la variabile della lista per selezionare gli elementi successivi MA
-    //deve tornare a 0 quando raggiunge 5
+    //deve tornare a 0 quando raggiunge 4
     currentActiveIndex--;
     if (currentActiveIndex < 0) {
-        currentActiveIndex = 4
+        currentActiveIndex = listItemsImages.length - 1;
     }
     //aggiungo la classe active
-    listItems[currentActiveIndex].classList.add('active');
+    listItemsImages[currentActiveIndex].classList.add('active');
 })
 

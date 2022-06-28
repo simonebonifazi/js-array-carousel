@@ -30,18 +30,40 @@ ul li {
     height: 100%;
 }
 
-.carousel-element img {
+#carousel-list img {
     width: 750px;
     height: 500px;
+
+    object-fit: cover;
 
     border-radius: 1rem;
 
 }
 
-.carousel-element {
+ul li {
     display: none;
 }
 
 .active {
     display: block;
+}
+
+.thumbnails-list {
+    width: 750px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.thumbnails-list img {
+    width: 18%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+
+    filter: grayscale(1);
+}
+
+.thumbnails-list img.active {
+    filter: grayscale(0);
+    border: 5px solid rgb(22, 117, 211);
 }
